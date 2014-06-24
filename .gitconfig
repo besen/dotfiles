@@ -1,0 +1,29 @@
+[user]
+	name = Renato Besen
+	email = renatobesen@gmail.com
+[alias]
+	st = status -sb
+	ci = commit
+	br = branch
+	co = checkout
+	df = diff
+	lg = log -p
+	who = shortlog -s --
+    ds = diff --stat
+[core]
+	excludesfile = /home/besen/.gitignore
+	editor = vim
+[color]
+    branch = auto
+    diff = auto
+    interactive = auto
+    status = auto
+	ui = true
+[branch]
+	autosetupmerge = true
+[push]
+	default = simple
+[mergetool]
+	keepBackup = true
+[merge]
+	tool = kdiff3
