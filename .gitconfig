@@ -1,29 +1,48 @@
 [user]
-	name = Renato Besen
-	email = renatobesen@gmail.com
+    name = Renato Besen
+    email = renatobesen@gmail.com
 [alias]
-	st = status -sb
-	ci = commit
-	br = branch
-	co = checkout
-	df = diff
-	lg = log -p
-	who = shortlog -s --
+    st = status -sb
+    ci = commit
+    co = checkout
+    br = branch
+    df = diff
     ds = diff --stat
+    dc = diff --cached
+    lg = log -p
+    glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+    who = shortlog -s --
+    prune = fetch --prune
+    undo = reset --soft HEAD^
+    stash-all = stash save --include-untracked
 [core]
-	excludesfile = /home/besen/.gitignore
-	editor = vim
+    excludesfile = /home/besen/.gitignore
+    editor = vim
+    pager = less -FMRiX
 [color]
     branch = auto
     diff = auto
     interactive = auto
     status = auto
-	ui = true
+    ui = true
 [branch]
-	autosetupmerge = true
+    autosetupmerge = true
 [push]
-	default = simple
+    default = simple
+    followTags = true
+[status]
+    showUntrackedFiles = all
 [mergetool]
-	keepBackup = true
+    keepBackup = true
 [merge]
-	tool = kdiff3
+    ff = only
+    conflictstyle = diff3
+[diff]
+    tool = icdiff
+    # https://github.com/jeffkaufman/icdiff
+[difftool]
+    prompt = false
+[difftool "icdiff"]
+    cmd = /home/besen/bin/icdiff --line-numbers $LOCAL $REMOTE
+[transfer]
+    fsckobjects = true
